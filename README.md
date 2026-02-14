@@ -1,6 +1,6 @@
 # Drug-Brain Alignment Mapping
 
-This repository contains code to map drug-induced transcriptomic signatures onto the human brain by correlating them with spatially resolved gene expression predictions. It leverages the predicted gene expression maps from the [brain-gene-map](https://github.com/melsadany/brain-drug-map) project (or link to that repo) and the Connectivity Map (CMap/LINCS) database to generate whole‑brain 3D maps of drug similarity.
+This repository contains code to map drug-induced transcriptomic signatures onto the human brain by correlating them with spatially resolved gene expression predictions. It leverages the predicted gene expression maps from the [brain-gene-map](https://github.com/melsadany/brain-gene-map) project (or link to that repo) and the Connectivity Map (CMap/LINCS) database to generate whole‑brain 3D maps of drug similarity.
 
 ![Shiny App Screenshot](figs/drug-map-app.png)  
 *Interactive viewer for drug‑brain alignment maps (sagittal, coronal, axial slices).*
