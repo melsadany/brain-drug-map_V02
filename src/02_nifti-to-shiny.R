@@ -257,7 +257,7 @@ ui <- fluidPage(
       
       .color-bar {
         height: 12px;
-        background: linear-gradient(to right, blue, white, red);
+        background: linear-gradient(to right, #4782b4, white, #ff4600);
         border-radius: 6px;
         width: 100%;
       }
@@ -360,7 +360,7 @@ ui <- fluidPage(
   ),
   
   navbarPage(
-    title = "Interactive Brain Atlas Viewer",
+    title = "Drug Activity Maps",
     windowTitle = "Brain Atlas Viewer for ",
     theme = bslib::bs_theme(version = 5, primary = colors$primary, secondary = colors$secondary),
     
@@ -450,12 +450,6 @@ ui <- fluidPage(
               
               div(
                 class = "slice-view",
-                div(class = "slice-header", "Axial (XY)"),
-                plotOutput("axial_plot", height = "350px", click = "axial_click")
-              ),
-              
-              div(
-                class = "slice-view",
                 div(class = "slice-header", "Sagittal (YZ)"),
                 plotOutput("sagittal_plot", height = "350px", click = "sagittal_click")
               ),
@@ -464,6 +458,11 @@ ui <- fluidPage(
                 class = "slice-view",
                 div(class = "slice-header", "Coronal (XZ)"),
                 plotOutput("coronal_plot", height = "350px", click = "coronal_click")
+              ),
+              div(
+                class = "slice-view",
+                div(class = "slice-header", "Axial (XY)"),
+                plotOutput("axial_plot", height = "350px", click = "axial_click")
               )
             )
           )
@@ -608,7 +607,7 @@ server <- function(input, output, session) {
     # Plot with slightly smaller font for axis labels
     image(1:nrow(slice_data), 1:ncol(slice_data), slice_data,
           col = rb_palette(),
-          xlab = "X (R→L)",
+          xlab = "X (L→R)",
           ylab = "Y (P→A)",
           main = paste("Z =", z_idx),
           asp = ncol(slice_data)/nrow(slice_data),
