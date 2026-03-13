@@ -199,7 +199,7 @@ all.corr.filt %>% filter(drug=="diazepam") %>% arrange(rho) %>%
 
 
 
-all.corr %>% filter(pval<0.05,term %in% terms.to.keep,
+all.corr %>% filter(pval<0.2,term %in% terms.to.keep,
                     drug %in% c("methylphenidate", "haloperidol", "sertraline", "lamotrigine", "diazepam","bupropion")) %>%
   ggplot(aes(drug,term,fill=rho,label=ifelse(FDR<0.05,"*","")))+geom_tile()+my.guides+redblu.col.gradient.2()+
   geom_text()+bw.theme+labs(y="term",x="")+theme(axis.text.x.bottom = element_text(angle = 90,hjust=1,vjust=0.5))
